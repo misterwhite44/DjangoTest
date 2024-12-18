@@ -7,4 +7,16 @@ def index(request):
     return HttpResponse(content)
 
 def contact(request):
-    content = "<form>Mail : <input type='mail' "
+    content = """
+    <h2>Contactez-nous</h2>
+    <form method="post" action="/submit-contact/">
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" rows="4" cols="50" required></textarea>
+        <br><br>
+        <button type="submit">Envoyer</button>
+    </form>
+    """
+    return HttpResponse(content)

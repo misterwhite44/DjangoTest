@@ -16,7 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from App1 import views  # Import des vues de ton application
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.index, name='index'),  # Exemple d'URL pointant vers une vue
+    path('contact/', views.contact, name='contact'),
 ]
+
