@@ -20,3 +20,6 @@ def contact(request):
     </form>
     """
     return HttpResponse(content)
+
+def result(request, number):
+    return HttpResponse(f"Le numéro est : {number}")
