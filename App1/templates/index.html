@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>Bienvenue sur votre nouvelle application Django</p>
+    
+    <ul>
+        {% for pokemon in list_pokemon %}
+        <li>
+            {{ pokemon.name }} de type {{ pokemon.type }}
+        </li>
+        {% endfor %}
+    </ul>
+    <br>
+    
+    {% if Age >= 18 %}
+        <p>Choisissez votre Pokémon et bienvenue au bar</p>
+    {% else %}
+        <p>Vous n'avez pas encore l'âge requis pour jouer</p>
+    {% endif %}
+</body>
+</html>

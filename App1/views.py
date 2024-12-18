@@ -3,8 +3,17 @@ from django.http import HttpResponse
 
 # Create your views here.
 def index(request):
-    content = "<h1> Bienvenue sur Django ! </h1>"
-    return HttpResponse(content)
+    context = {
+        'title': "Bienvenue sur Django",
+        'list_pokemon': [
+            {'name': 'Pikachu', 'type': 'Électrique'},
+            {'name': 'Salamèche', 'type': 'Feu'},
+            {'name': 'Bulbizarre', 'type': 'Plante'}
+        ],       
+        'Age': 21
+    }
+    return render(request, 'index.html', context)
+
 
 def contact(request):
     content = """
